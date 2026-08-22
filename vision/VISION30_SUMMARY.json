@@ -1,0 +1,27 @@
+{
+  "suite": "ECHO_VISION30_PRETRAIN_BASELINE_V1",
+  "cases": 30,
+  "status": {
+    "PASS": 28,
+    "FAIL": 2
+  },
+  "by_group": {
+    "chart_metric": {
+      "PASS": 5,
+      "FAIL": 1
+    },
+    "error_message": {
+      "PASS": 6
+    },
+    "general": {
+      "PASS": 5
+    },
+    "hu_ui": {
+      "PASS": 8
+    },
+    "image_plus_context": {
+      "PASS": 4,
+      "FAIL": 1
+    }
+  }
+}

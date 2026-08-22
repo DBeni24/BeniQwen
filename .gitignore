@@ -1,0 +1,32 @@
+﻿# Large model/checkpoint artifacts
+checkpoints/
+*.safetensors
+*.gguf
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.tar.gz
+
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*service-account*.json
+*credentials*.json
+*token*
+*secret*
+
+# Python / caches
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
