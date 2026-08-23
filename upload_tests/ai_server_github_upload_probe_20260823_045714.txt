@@ -1,0 +1,4 @@
+﻿AI_SERVER_GITHUB_UPLOAD_PROBE
+timestamp=20260823_045714
+host=AI-SERVER
+purpose=unattended_upload_validation
