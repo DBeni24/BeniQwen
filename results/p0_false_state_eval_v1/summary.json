@@ -1,0 +1,351 @@
+{
+  "dataset": "ECHO_FALSE_STATE_CORRECTIVE_V0_1_R2",
+  "checkpoint_state": "CHECKPOINT_CANDIDATE",
+  "scorer": "FIRST_STATE_TOKEN_STRICT_V1",
+  "base": {
+    "mode": "base",
+    "total": 240,
+    "splits": {
+      "validation": {
+        "rows": 120,
+        "pass": 16,
+        "fail": 104,
+        "accuracy": 0.133333,
+        "unique_prompts": 114,
+        "unique_pass": 15,
+        "unique_fail": 99,
+        "unique_accuracy": 0.131579,
+        "unparseable": 66
+      },
+      "challenge": {
+        "rows": 120,
+        "pass": 15,
+        "fail": 105,
+        "accuracy": 0.125,
+        "unique_prompts": 109,
+        "unique_pass": 15,
+        "unique_fail": 94,
+        "unique_accuracy": 0.137615,
+        "unparseable": 72
+      }
+    },
+    "overall": {
+      "rows": 240,
+      "pass": 31,
+      "fail": 209,
+      "accuracy": 0.129167,
+      "unique_prompts": 223,
+      "unique_pass": 30,
+      "unique_fail": 193,
+      "unique_accuracy": 0.134529,
+      "unparseable": 138
+    },
+    "categories": {
+      "approval_state": {
+        "rows": 25,
+        "pass": 0,
+        "fail": 25,
+        "accuracy": 0.0,
+        "unique_prompts": 16,
+        "unique_pass": 0,
+        "unique_fail": 16,
+        "unique_accuracy": 0.0,
+        "unparseable": 13
+      },
+      "authoritative_conflict": {
+        "rows": 25,
+        "pass": 0,
+        "fail": 25,
+        "accuracy": 0.0,
+        "unique_prompts": 25,
+        "unique_pass": 0,
+        "unique_fail": 25,
+        "unique_accuracy": 0.0,
+        "unparseable": 24
+      },
+      "checkpoint_lifecycle": {
+        "rows": 25,
+        "pass": 13,
+        "fail": 12,
+        "accuracy": 0.52,
+        "unique_prompts": 25,
+        "unique_pass": 13,
+        "unique_fail": 12,
+        "unique_accuracy": 0.52,
+        "unparseable": 12
+      },
+      "explicit_known_false": {
+        "rows": 20,
+        "pass": 10,
+        "fail": 10,
+        "accuracy": 0.5,
+        "unique_prompts": 18,
+        "unique_pass": 9,
+        "unique_fail": 9,
+        "unique_accuracy": 0.5,
+        "unparseable": 10
+      },
+      "explicit_known_true": {
+        "rows": 20,
+        "pass": 4,
+        "fail": 16,
+        "accuracy": 0.2,
+        "unique_prompts": 20,
+        "unique_pass": 4,
+        "unique_fail": 16,
+        "unique_accuracy": 0.2,
+        "unparseable": 16
+      },
+      "file_existence_evidence": {
+        "rows": 20,
+        "pass": 0,
+        "fail": 20,
+        "accuracy": 0.0,
+        "unique_prompts": 20,
+        "unique_pass": 0,
+        "unique_fail": 20,
+        "unique_accuracy": 0.0,
+        "unparseable": 12
+      },
+      "heartbeat_calibration": {
+        "rows": 25,
+        "pass": 0,
+        "fail": 25,
+        "accuracy": 0.0,
+        "unique_prompts": 25,
+        "unique_pass": 0,
+        "unique_fail": 25,
+        "unique_accuracy": 0.0,
+        "unparseable": 19
+      },
+      "stale_evidence": {
+        "rows": 25,
+        "pass": 0,
+        "fail": 25,
+        "accuracy": 0.0,
+        "unique_prompts": 24,
+        "unique_pass": 0,
+        "unique_fail": 24,
+        "unique_accuracy": 0.0,
+        "unparseable": 12
+      },
+      "started_not_completed": {
+        "rows": 25,
+        "pass": 0,
+        "fail": 25,
+        "accuracy": 0.0,
+        "unique_prompts": 25,
+        "unique_pass": 0,
+        "unique_fail": 25,
+        "unique_accuracy": 0.0,
+        "unparseable": 12
+      },
+      "unknown_missing_evidence": {
+        "rows": 30,
+        "pass": 4,
+        "fail": 26,
+        "accuracy": 0.133333,
+        "unique_prompts": 25,
+        "unique_pass": 4,
+        "unique_fail": 21,
+        "unique_accuracy": 0.16,
+        "unparseable": 8
+      }
+    },
+    "confusion": {
+      "UNKNOWN": {
+        "KNOWN_FALSE": 55,
+        "KNOWN_TRUE": 15,
+        "UNKNOWN": 4,
+        "UNPARSEABLE": 52
+      },
+      "KNOWN_TRUE": {
+        "UNPARSEABLE": 16,
+        "KNOWN_TRUE": 4
+      },
+      "KNOWN_FALSE": {
+        "UNPARSEABLE": 40,
+        "KNOWN_FALSE": 23
+      },
+      "PROBABLE_ONLINE": {
+        "UNPARSEABLE": 6
+      },
+      "REVIEW_REQUIRED": {
+        "UNPARSEABLE": 24,
+        "KNOWN_FALSE": 1
+      }
+    }
+  },
+  "lora": {
+    "mode": "lora",
+    "total": 240,
+    "splits": {
+      "validation": {
+        "rows": 120,
+        "pass": 120,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 114,
+        "unique_pass": 114,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "challenge": {
+        "rows": 120,
+        "pass": 120,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 109,
+        "unique_pass": 109,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      }
+    },
+    "overall": {
+      "rows": 240,
+      "pass": 240,
+      "fail": 0,
+      "accuracy": 1.0,
+      "unique_prompts": 223,
+      "unique_pass": 223,
+      "unique_fail": 0,
+      "unique_accuracy": 1.0,
+      "unparseable": 0
+    },
+    "categories": {
+      "approval_state": {
+        "rows": 25,
+        "pass": 25,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 16,
+        "unique_pass": 16,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "authoritative_conflict": {
+        "rows": 25,
+        "pass": 25,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 25,
+        "unique_pass": 25,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "checkpoint_lifecycle": {
+        "rows": 25,
+        "pass": 25,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 25,
+        "unique_pass": 25,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "explicit_known_false": {
+        "rows": 20,
+        "pass": 20,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 18,
+        "unique_pass": 18,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "explicit_known_true": {
+        "rows": 20,
+        "pass": 20,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 20,
+        "unique_pass": 20,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "file_existence_evidence": {
+        "rows": 20,
+        "pass": 20,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 20,
+        "unique_pass": 20,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "heartbeat_calibration": {
+        "rows": 25,
+        "pass": 25,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 25,
+        "unique_pass": 25,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "stale_evidence": {
+        "rows": 25,
+        "pass": 25,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 24,
+        "unique_pass": 24,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "started_not_completed": {
+        "rows": 25,
+        "pass": 25,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 25,
+        "unique_pass": 25,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      },
+      "unknown_missing_evidence": {
+        "rows": 30,
+        "pass": 30,
+        "fail": 0,
+        "accuracy": 1.0,
+        "unique_prompts": 25,
+        "unique_pass": 25,
+        "unique_fail": 0,
+        "unique_accuracy": 1.0,
+        "unparseable": 0
+      }
+    },
+    "confusion": {
+      "UNKNOWN": {
+        "UNKNOWN": 126
+      },
+      "KNOWN_TRUE": {
+        "KNOWN_TRUE": 20
+      },
+      "KNOWN_FALSE": {
+        "KNOWN_FALSE": 63
+      },
+      "PROBABLE_ONLINE": {
+        "PROBABLE_ONLINE": 6
+      },
+      "REVIEW_REQUIRED": {
+        "REVIEW_REQUIRED": 25
+      }
+    }
+  },
+  "delta": {
+    "row_accuracy": 0.870833,
+    "unique_accuracy": 0.865471
+  }
+}
