@@ -99,3 +99,26 @@ HU-005, HU-040, HU-045, HU-050, HU-055, PERS-015, PERS-030, PERS-040, RSN-020, R
 Full acceptance remains OPEN: this manual supplement does not clear the original REVIEW_REQUIRED statuses. Speed, MTP/non-MTP, official benchmark, packaging, and protocol verification remain unfinished.
 
 The shared GPU/RAM gate is paused. The AI-Server RTX 3090 showed 0% utilization, 95 MiB VRAM used, and no active Ollama model. LM Studio and Python processes remain present but were not stopped; their model workload status was not established. No model workload was started.
+## Paired verdict transitions for the 76 REVIEW_REQUIRED pairs
+
+Derived from the case-level `primary_manual_review.reviewed` ledger captured at 2026-10-21 23:36 CEST. Counts are qualitative reviewer labels, not a numeric quality score.
+
+| Base verdict | LoRA verdict | Pairs |
+|---|---|---:|
+| FAIL | FAIL | 25 |
+| FAIL | PASS | 5 |
+| FAIL | PASS_WITH_LIMITATION | 12 |
+| FAIL | PASS_WITH_MINOR_ISSUES | 3 |
+| PASS | PASS | 1 |
+| PASS | PASS_WITH_LIMITATION | 1 |
+| PASS_WITH_LIMITATION | FAIL | 11 |
+| PASS_WITH_LIMITATION | PASS | 3 |
+| PASS_WITH_LIMITATION | PASS_WITH_LIMITATION | 9 |
+| PASS_WITH_MINOR_ISSUES | FAIL | 3 |
+| PASS_WITH_MINOR_ISSUES | PASS | 1 |
+| PASS_WITH_MINOR_ISSUES | PASS_WITH_LIMITATION | 1 |
+| PASS_WITH_MINOR_ISSUES | PASS_WITH_MINOR_ISSUES | 1 |
+| **Total** |  | **76** |
+
+This is a single-AI-review supplement without an independent second reviewer or a frozen numeric pass threshold. It does not alter raw `REVIEW_REQUIRED` statuses or automatic scores. Eleven of the reviewed pairs are evaluation-only holdouts; HU-060-informed P31 data selection means the Full470 remains exploratory, not an independent unbiased estimate.
+
