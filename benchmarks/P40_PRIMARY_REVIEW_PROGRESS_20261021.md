@@ -1,65 +1,69 @@
 # P40 Full470 primary review progress — 2026-10-21
 
-## Scope and result
+## Reconciliation
 
-This note records a supplemental qualitative review of forty-four paired cases whose Base and P40-LoRA primary outputs were both marked REVIEW_REQUIRED. The full primary run contains 470 aligned Base/LoRA case IDs; 76 pairs are jointly REVIEW_REQUIRED. Forty-four of those pairs have now been manually reviewed, leaving 32 in that group.
+- Source suite: 470 unique cases.
+- Primary Base and LoRA: 470 rows each; case ID sets match.
+- Both primary arms are REVIEW_REQUIRED on 76 cases.
+- Additively adjudicated here: 49 pairs; pending in that group: 27.
+- Raw JSONL statuses and automatic metrics remain unchanged. Separate latest-retry manual review: 58 pairs; not merged into primary metrics.
 
-| Case | Visibility | Base manual verdict | P40-LoRA manual verdict |
-|---|---|---|---|
-| HU-001 | diagnostic | PASS_WITH_MINOR_ISSUES | PASS_WITH_MINOR_ISSUES |
-| HU-003 | diagnostic | PASS_WITH_MINOR_ISSUES | PASS_WITH_LIMITATION |
-| HU-005 | holdout, evaluation-only | PASS_WITH_MINOR_ISSUES | FAIL |
-| HU-006 | diagnostic | FAIL | FAIL |
-| HU-008 | diagnostic | PASS_WITH_MINOR_ISSUES | PASS |
-| HU-011 | diagnostic | FAIL | PASS_WITH_MINOR_ISSUES |
-| HU-014 | diagnostic | PASS_WITH_LIMITATION | PASS |
-| HU-018 | diagnostic | PASS_WITH_LIMITATION | FAIL |
-| HU-028 | diagnostic | FAIL | FAIL |
-| HU-033 | diagnostic | FAIL | PASS_WITH_MINOR_ISSUES |
-| HU-036 | diagnostic | FAIL | FAIL |
-| HU-037 | diagnostic | FAIL | PASS_WITH_LIMITATION |
-| HU-039 | diagnostic | FAIL | PASS_WITH_LIMITATION |
-| HU-040 | holdout, evaluation-only | FAIL | FAIL |
-| HU-041 | diagnostic | FAIL | FAIL |
-| HU-042 | diagnostic | FAIL | PASS_WITH_MINOR_ISSUES |
-| HU-043 | diagnostic | PASS_WITH_MINOR_ISSUES | FAIL |
-| HU-044 | diagnostic | FAIL | FAIL |
-| HU-045 | holdout, evaluation-only | PASS_WITH_MINOR_ISSUES | FAIL |
-| HU-046 | diagnostic | PASS_WITH_LIMITATION | PASS_WITH_LIMITATION |
-| HU-047 | diagnostic | FAIL | FAIL |
-| HU-048 | diagnostic | FAIL | PASS |
-| HU-049 | diagnostic | FAIL | FAIL |
-| HU-050 | holdout, evaluation-only | FAIL | FAIL |
-| HU-051 | diagnostic | PASS_WITH_LIMITATION | FAIL |
-| HU-052 | diagnostic | FAIL | FAIL |
-| HU-053 | diagnostic | FAIL | FAIL |
-| HU-054 | diagnostic | PASS_WITH_LIMITATION | FAIL |
-| HU-055 | holdout, evaluation-only | PASS_WITH_LIMITATION | FAIL |
-| HU-056 | diagnostic | FAIL | FAIL |
-| HU-057 | diagnostic | FAIL | FAIL |
-| HU-058 | diagnostic | PASS_WITH_LIMITATION | FAIL |
-| HU-059 | diagnostic | FAIL | FAIL |
-| PERS-002 | diagnostic | FAIL | PASS_WITH_LIMITATION |
-| PERS-003 | diagnostic | FAIL | PASS_WITH_LIMITATION |
-| PERS-004 | diagnostic | PASS_WITH_LIMITATION | FAIL |
-| PERS-006 | diagnostic | PASS_WITH_LIMITATION | FAIL |
-| PERS-007 | diagnostic | FAIL | FAIL |
-| PERS-008 | diagnostic | FAIL | PASS_WITH_LIMITATION |
-| PERS-009 | diagnostic | PASS_WITH_LIMITATION | FAIL |
-| PERS-011 | diagnostic | FAIL | PASS_WITH_LIMITATION |
-| PERS-013 | diagnostic | FAIL | PASS_WITH_LIMITATION |
-| PERS-014 | diagnostic | FAIL | FAIL |
-| PERS-015 | holdout, evaluation-only | FAIL | FAIL |
+## Reviewed cases
 
-These verdicts are qualitative judgments against the case prompt and named manual rubric dimensions. Those rubrics do not define a frozen numeric pass threshold. The review does not modify the original JSONL rows, automated statuses, or primary accuracy totals. HU-005, HU-040, HU-045, HU-050, HU-055, and PERS-015 are holdout and used only for evaluation; no holdout data was used for training.
+| Case | Base manual verdict | LoRA manual verdict |
+|---|---|---|
+| HU-042 | FAIL | PASS_WITH_MINOR_ISSUES |
+| HU-011 | FAIL | PASS_WITH_MINOR_ISSUES |
+| HU-039 | FAIL | PASS_WITH_LIMITATION |
+| HU-041 | FAIL | FAIL |
+| HU-005 | PASS_WITH_MINOR_ISSUES | FAIL |
+| HU-008 | PASS_WITH_MINOR_ISSUES | PASS |
+| HU-014 | PASS_WITH_LIMITATION | PASS |
+| HU-018 | PASS_WITH_LIMITATION | FAIL |
+| HU-028 | FAIL | FAIL |
+| HU-033 | FAIL | PASS_WITH_MINOR_ISSUES |
+| HU-036 | FAIL | FAIL |
+| HU-037 | FAIL | PASS_WITH_LIMITATION |
+| HU-040 | FAIL | FAIL |
+| HU-043 | PASS_WITH_MINOR_ISSUES | FAIL |
+| HU-044 | FAIL | FAIL |
+| HU-045 | PASS_WITH_MINOR_ISSUES | FAIL |
+| HU-046 | PASS_WITH_LIMITATION | PASS_WITH_LIMITATION |
+| HU-047 | FAIL | FAIL |
+| HU-048 | FAIL | PASS |
+| HU-001 | PASS_WITH_MINOR_ISSUES | PASS_WITH_MINOR_ISSUES |
+| HU-003 | PASS_WITH_MINOR_ISSUES | PASS_WITH_LIMITATION |
+| HU-006 | FAIL | FAIL |
+| HU-057 | FAIL | FAIL |
+| PERS-006 | PASS_WITH_LIMITATION | FAIL |
+| HU-049 | FAIL | FAIL |
+| HU-050 | FAIL | FAIL |
+| HU-051 | PASS_WITH_LIMITATION | FAIL |
+| HU-052 | FAIL | FAIL |
+| HU-053 | FAIL | FAIL |
+| HU-054 | PASS_WITH_LIMITATION | FAIL |
+| HU-055 | PASS_WITH_LIMITATION | FAIL |
+| HU-056 | FAIL | FAIL |
+| HU-058 | PASS_WITH_LIMITATION | FAIL |
+| HU-059 | FAIL | FAIL |
+| PERS-002 | FAIL | PASS_WITH_LIMITATION |
+| PERS-003 | FAIL | PASS_WITH_LIMITATION |
+| PERS-004 | PASS_WITH_LIMITATION | FAIL |
+| PERS-007 | FAIL | FAIL |
+| PERS-008 | FAIL | PASS_WITH_LIMITATION |
+| PERS-009 | PASS_WITH_LIMITATION | FAIL |
+| PERS-011 | FAIL | PASS_WITH_LIMITATION |
+| PERS-013 | FAIL | PASS_WITH_LIMITATION |
+| PERS-014 | FAIL | FAIL |
+| PERS-015 | FAIL | FAIL |
+| PERS-016 | FAIL | FAIL |
+| PERS-017 | PASS_WITH_LIMITATION | PASS_WITH_LIMITATION |
+| PERS-018 | FAIL | FAIL |
+| PERS-019 | FAIL | PASS |
+| PERS-021 | FAIL | FAIL |
 
-## Provenance and limitations
+Pending case IDs and source/output hashes are recorded in the companion JSON.
 
-- Frozen Full470 case file SHA-256: `ac48af14e39bb14bc8a2e2f494720e4ae507ce6cd24527c34be06be1cf84bbbe`.
-- The companion local audit records contain source-file and answer hashes; raw prompts and completions are not published here.
-- This is one AI review without an independent second reviewer. Do not treat these forty-four judgments as an independently validated score.
-- HU-060 aggregate results informed P31 training-data design. Full470 therefore remains holdout-informed and exploratory, not an independent unbiased final estimate.
-- The separate 58-pair latest-retry review is supplemental and is not merged into the primary metrics.
-- Full acceptance remains open: 32 jointly REVIEW_REQUIRED primary pairs remain in this review group, and the speed, MTP/non-MTP, and official benchmark comparison gates are still outstanding.
+This is a single-AI-review supplement without an independent second reviewer; manual rubrics have no frozen numeric threshold. HU-060 aggregate results informed P31 data design, so Full470 remains holdout-informed and exploratory. HU-005, HU-040, HU-045, HU-050, HU-055, and PERS-015 were evaluation-only, not training.
 
-No inference, benchmark run, model loading, or training was started in this update. The AI-Server RTX 3090 was idle at 0% utilization with 95 MiB VRAM used; no active Ollama model was shown. LM Studio and Python processes remained present but were not stopped. An active model inference was not established. The shared GPU/RAM gate was paused; this work reviewed existing outputs only.
+The shared GPU/RAM gate is paused. The AI-Server RTX 3090 showed 0% utilization, 95 MiB VRAM used, and no active Ollama model. LM Studio and Python processes remain present but were not stopped; their model workload status was not established. No model workload was started.
