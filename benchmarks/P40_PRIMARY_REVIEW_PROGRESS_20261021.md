@@ -5,7 +5,7 @@
 - Source suite: 470 unique cases.
 - Primary Base and LoRA: 470 rows each; case ID sets match.
 - Both primary arms are REVIEW_REQUIRED on 76 cases.
-- Additively adjudicated here: 49 pairs; pending in that group: 27.
+- Additively adjudicated here: 54 pairs; pending in that group: 22.
 - Raw JSONL statuses and automatic metrics remain unchanged. Separate latest-retry manual review: 58 pairs; not merged into primary metrics.
 
 ## Reviewed cases
@@ -61,6 +61,11 @@
 | PERS-018 | FAIL | FAIL |
 | PERS-019 | FAIL | PASS |
 | PERS-021 | FAIL | FAIL |
+| PERS-022 | FAIL | PASS_WITH_LIMITATION |
+| PERS-023 | PASS_WITH_LIMITATION | FAIL |
+| PERS-026 | PASS_WITH_LIMITATION | PASS_WITH_LIMITATION |
+| PERS-028 | FAIL | FAIL |
+| PERS-030 | FAIL | FAIL |
 
 Pending case IDs and source/output hashes are recorded in the companion JSON.
 
