@@ -1,0 +1,53 @@
+{
+  "correction": "For these two rows only, interpret the prior output_sha256 as result_file_sha256. Use final_answer_sha256 above when identifying the answer text. Manual verdicts, raw REVIEW_REQUIRED statuses, and results.jsonl files are unchanged.",
+  "purpose": "Clarify two mislabeled output hashes in the 32K PERS-027 retry review; preserve verdicts and raw outputs.",
+  "schema_version": 1,
+  "owner": "Codex",
+  "finding": "The previous output_sha256 fields (and supplemental base_result_sha256/lora_result_sha256) equal the complete results.jsonl file hashes, not the SHA-256 of each final_answer. They are retained here as result_file_sha256, with separately computed final_answer_sha256 values.",
+  "verification": {
+    "retry_arm_rows": 116,
+    "gpu_model_work_started": false,
+    "primary_review_cases": 76,
+    "independent_second_review": false,
+    "review_holdout_cases": 15,
+    "retry_review_cases": 58,
+    "output_token_count_matches": 116,
+    "raw_status_matches": 116,
+    "final_answer_hash_matches_after_existing_10_row_correction_and_this_clarification": 116,
+    "combined_distinct_reviewed_cases": 134,
+    "overlap_with_primary_review": 0
+  },
+  "source_artifacts": [
+    "P40_LATEST_RETRY_MANUAL_REVIEW_20261021.json",
+    "PERS-027_32768_SUPPLEMENTAL_MANUAL_REVIEW_20261021.json",
+    "full470-pers027-retry-20261021-32768-fla-accelerate2/runs-32768-accelerate2-relaunch/{base,lora}/results.jsonl"
+  ],
+  "scope": "PERS-027, 32,768-context supplemental retry only",
+  "created_local": "2026-10-21 23:50:34 +02:00",
+  "records": [
+    {
+      "arm": "base",
+      "case_id": "PERS-027",
+      "source": "full470-pers027-retry-20261021-32768-fla-accelerate2/runs-32768-accelerate2-relaunch/base/results.jsonl",
+      "output_tokens": 1747,
+      "status": "REVIEW_REQUIRED",
+      "final_answer_sha256": "E7599CFAFD15B8C37B644F8FEFEA8A1E41C4733EC3C365A40574A36FA7238EE3",
+      "result_file_sha256": "F9F20C52E3636028DAD9A0014B6F55FFC09D8FB53AB2DCA8C9BC38FBD091E884",
+      "manual_verdict": "FAIL",
+      "previous_mislabeled_output_sha256": "F9F20C52E3636028DAD9A0014B6F55FFC09D8FB53AB2DCA8C9BC38FBD091E884",
+      "completion_status": "COMPLETE"
+    },
+    {
+      "arm": "lora",
+      "case_id": "PERS-027",
+      "source": "full470-pers027-retry-20261021-32768-fla-accelerate2/runs-32768-accelerate2-relaunch/lora/results.jsonl",
+      "output_tokens": 41,
+      "status": "REVIEW_REQUIRED",
+      "final_answer_sha256": "160DB630F589B00267E2BAA3302C898E0C841B4D8F68C19371FE828B711045A8",
+      "result_file_sha256": "2E11F29AD73A84F951740C545E1D0908A0A7DA17D79F4EA800BEDA09B8C63746",
+      "manual_verdict": "PASS_WITH_MINOR_USEFULNESS_LIMITATION",
+      "previous_mislabeled_output_sha256": "2E11F29AD73A84F951740C545E1D0908A0A7DA17D79F4EA800BEDA09B8C63746",
+      "completion_status": "COMPLETE"
+    }
+  ]
+}
