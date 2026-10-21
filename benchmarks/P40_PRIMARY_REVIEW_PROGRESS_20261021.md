@@ -5,7 +5,7 @@
 - Source suite: 470 unique cases.
 - Primary Base and LoRA: 470 rows each; case ID sets match.
 - Both primary arms are REVIEW_REQUIRED on 76 cases.
-- Additively adjudicated here: 59 pairs; pending in that group: 17.
+- Additively adjudicated here: 64 pairs; pending in that group: 12.
 - Raw JSONL statuses and automatic metrics remain unchanged. Separate latest-retry manual review: 58 pairs; not merged into primary metrics.
 
 ## Reviewed cases
@@ -71,9 +71,14 @@
 | PERS-034 | PASS_WITH_LIMITATION | PASS |
 | PERS-038 | PASS_WITH_LIMITATION | PASS_WITH_LIMITATION |
 | PERS-039 | FAIL | PASS_WITH_LIMITATION |
+| PERS-040 | PASS_WITH_LIMITATION | PASS |
+| RSN-006 | PASS_WITH_LIMITATION | FAIL |
+| RSN-007 | PASS_WITH_LIMITATION | PASS_WITH_LIMITATION |
+| RSN-008 | PASS_WITH_LIMITATION | PASS_WITH_LIMITATION |
+| RSN-009 | PASS_WITH_LIMITATION | FAIL |
 
 Pending case IDs and source/output hashes are recorded in the companion JSON.
 
-This is a single-AI-review supplement without an independent second reviewer; manual rubrics have no frozen numeric threshold. HU-060 aggregate results informed P31 data design, so Full470 remains holdout-informed and exploratory. HU-005, HU-040, HU-045, HU-050, HU-055, and PERS-015 were evaluation-only, not training.
+This is a single-AI-review supplement without an independent second reviewer; manual rubrics have no frozen numeric threshold. HU-060 aggregate results informed P31 data design, so Full470 remains holdout-informed and exploratory. HU-005, HU-040, HU-045, HU-050, HU-055, PERS-015, and PERS-040 were evaluation-only, not training.
 
 The shared GPU/RAM gate is paused. The AI-Server RTX 3090 showed 0% utilization, 95 MiB VRAM used, and no active Ollama model. LM Studio and Python processes remain present but were not stopped; their model workload status was not established. No model workload was started.
