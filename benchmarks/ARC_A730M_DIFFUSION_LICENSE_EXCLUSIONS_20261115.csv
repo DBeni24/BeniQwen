@@ -1,0 +1,7 @@
+"Model","License","TestRows","Decision"
+"FLUX1-Dev-Q4_K_S","FLUX.1 [dev] Non-Commercial License","12","Excluded from commercial results and blind ranking; benchmark-only historical record"
+"Juggernaut XL v9","CreativeML Open RAIL-M; model card describes personal/creative use; paid API requires separate license","12","Excluded from commercial comparison and blind test pending explicit commercial-use rights"
+"Juggernaut XL v9 INT8 OpenVINO","CreativeML Open RAIL-M; model card describes personal/creative use; paid API requires separate license","12","Excluded from commercial comparison and blind test pending explicit commercial-use rights"
+"Juggernaut XL Lightning FP16","CreativeML Open RAIL-M; model card describes personal/creative use; paid API requires separate license","12","Excluded from commercial comparison and blind test pending explicit commercial-use rights"
+"Juggernaut XL Lightning INT4 OpenVINO","CreativeML Open RAIL-M; model card describes personal/creative use; paid API requires separate license","12","Excluded from commercial comparison and blind test pending explicit commercial-use rights"
+
