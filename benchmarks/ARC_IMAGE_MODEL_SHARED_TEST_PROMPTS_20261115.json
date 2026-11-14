@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "study_id": "shared-image-model-benchmark-2026-11",
+  "created_utc_date": "2026-11-15",
+  "purpose": "Run the same prompt cases on the RTX 4090 candidates and compare them with the existing Intel Arc A730M image-model study.",
+  "source_note": "The six task categories recur in the Intel image tests. Historical prompt wording varied slightly by model; this file freezes one exact, model-independent prompt per category for the RTX 4090 runs.",
+  "shared_settings": {
+    "width": 1024,
+    "height": 1024,
+    "seeds": [42, 1234],
+    "images_per_model": 12,
+    "prompt_must_be_used_verbatim": true,
+    "model_specific_settings_must_be_recorded": [
+      "model repository and exact revision",
+      "license and any use conditions",
+      "weight filename, quantization, bytes, SHA-256",
+      "runtime, version, backend, precision",
+      "sampler or scheduler, steps, guidance or CFG, any other changed setting"
+    ],
+    "timing_fields_seconds": [
+      "download",
+      "runtime_startup",
+      "cold_model_load",
+      "first_compile_or_warmup",
+      "prompt_encoding",
+      "generation_or_denoising",
+      "vae_decode",
+      "png_write",
+      "end_to_end"
+    ],
+    "timing_note": "Record unavailable stages as null. Keep cold load and first compile/warmup separate from steady-state generation. Do not infer missing stage times from total time."
+  },
+  "quality_gate": {
+    "rule": "Check explicit content and count requirements first. Mark each image pass/fail per case; keep the reason for each failure. Report pass rate separately from subjective preference.",
+    "subjective_axes": ["prompt adherence", "composition", "detail and sharpness", "realism or style coherence", "anatomy", "text accuracy"]
+  },
+  "cases": [
+    {
+      "id": "01_still_life",
+      "category": "still life / baseline",
+      "prompt": "A red ceramic teapot on a wooden table, soft studio light.",
+      "pass_checks": ["one red ceramic teapot", "teapot and table are clearly visible", "no extra prominent objects that contradict the prompt"]
+    },
+    {
+      "id": "02_color_binding",
+      "category": "object identity, color, and left-to-right placement",
+      "prompt": "A red ceramic mug on the left, a yellow closed book in the middle, and a blue pear on the right, arranged in one row on a pale wooden table, soft studio light.",
+      "pass_checks": ["all three requested objects are present", "mug is red, book is yellow and closed, pear is blue", "left-to-right order is mug, book, pear"]
+    },
+    {
+      "id": "03_count_position",
+      "category": "exact count and spatial relation",
+      "prompt": "On a plain table, exactly four cups: three white cups in one straight horizontal row, and one red cup to the left of that row. All four cups are fully visible, front view.",
+      "pass_checks": ["exactly four cups", "three white cups form one horizontal row", "one red cup is to the left of the row", "all cups are fully visible"]
+    },
+    {
+      "id": "04_hand_object",
+      "category": "human anatomy and object interaction",
+      "prompt": "A single natural human hand holding one small white ceramic mug by its handle, full hand and full mug visible, five natural fingers, neutral background, soft daylight, product photography.",
+      "pass_checks": ["one hand holds one mug by the handle", "full hand and full mug are visible", "hand has five plausible fingers without obvious duplication or fusion"]
+    },
+    {
+      "id": "05_architecture",
+      "category": "environment, realism, and full-scene composition",
+      "prompt": "Wide eye-level photograph of a yellow tram crossing a Budapest street at dusk, wet pavement reflecting warm shop-window lights, historic facades, tram fully visible, realistic perspective.",
+      "pass_checks": ["yellow tram is fully visible", "Budapest-like historic street scene at dusk", "wet pavement shows light reflections", "perspective is coherent"]
+    },
+    {
+      "id": "06_text",
+      "category": "exact text rendering",
+      "prompt": "Minimalist cream event poster with the exact words HELYI MODELLTESZT in large dark-blue uppercase letters, centered, no other words, simple geometric border.",
+      "pass_checks": ["the text reads exactly HELYI MODELLTESZT", "uppercase spelling is correct", "no additional words are visible", "poster has a simple geometric border"]
+    }
+  ],
+  "candidate_models": [
+    {
+      "id": "qwen-image-2512",
+      "repository": "Qwen/Qwen-Image-2512",
+      "license_reference": "https://huggingface.co/Qwen/Qwen-Image-2512"
+    },
+    {
+      "id": "hidream-o1-image",
+      "repository": "HiDream-ai/HiDream-O1-Image",
+      "license_reference": "https://huggingface.co/HiDream-ai/HiDream-O1-Image"
+    },
+    {
+      "id": "stable-diffusion-3.5-large",
+      "repository": "stabilityai/stable-diffusion-3.5-large",
+      "license_reference": "https://huggingface.co/stabilityai/stable-diffusion-3.5-large",
+      "license_note": "Check current Stability Community License conditions against intended commercial use before downloading or running."
+    }
+  ]
+}
